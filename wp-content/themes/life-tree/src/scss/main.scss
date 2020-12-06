@@ -1,15 +1,35 @@
 @import "normalize";
+@import "default";
 
 @font-face {
-  font-family: 'Poppins-Light';
-  src: url("../../src/fonts/Poppins-Light.ttf") format("truetype");
+  font-family: 'GothamPro-Regular';
+  src: url("../fonts/GothamPro.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: 'GothamPro-Medium';
+  src: url("../fonts/GothamPro-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'GothamPro-Bold';
+  src: url("../fonts/GothamPro-Bold.ttf") format("truetype");
+}
+
+html{
+  font-size: 62.5%;
+  font-family: GothamPro-Regular;
+}
+
+$color-transition: 0.5s;
 
 a{
   text-decoration: none;
 }
 *{
   box-sizing: border-box;
+  font-size: 1.6rem;
+  line-height: 120%;
 }
 .locked{
   overflow: hidden;
@@ -24,6 +44,188 @@ body{
   padding: 0;
   margin: 0;
 }
+.transition05{
+  transition: 0.5s;
+}
+.main{
+  position: relative;
+  .main__header{
+    position: absolute;
+    top: 53px;
+    width: 100%;
+    padding: 0 60px;
+    z-index: 99;
+  }
+  &__nav{
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 30px 10px rgba(148, 133, 133, 0.5);
+    .menu-osnovnoe-menyu-container{
+      background: #FFFFFF;
+      width: 100%;
+      ul{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        li{
+          height: 100%;
+          transition: 0.5s;
+          &:first-child{
+            background-color: #3A6919;
+            a{
+              color: #FFFFFF;
+              padding: 0 60px;
+            }
+            &:hover{
+              background-color: #8FBF4F;
+              a{
+                color: #FFFFFF;
+              }
+            }
+          }
+          &:nth-child(2){
+            a{
+              padding: 0 30px 0 60px;
+            }
+          }
+          &:hover{
+            a{
+              color: #8FBF4F;
+            }
+          }
+          a{
+            font-family: GothamPro-Medium;
+            font-size: 1.6rem;
+            line-height: 1.5rem;
+            padding: 0 30px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #000000;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+  &__burger-menu{
+    width: 84px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0D740;
+    padding: 0 26px;
+    cursor: pointer;
+    &:hover{
+      background-color: #F7A85B;
+    }
+    span{
+      height: 2px;
+      width: 100%;
+      display: block;
+      background-color: #FFFFFF;
+      margin: 6px 0;
+    }
+  }
+}
+.main-slider{
+  &__wrapper{
+    display: inline-flex;
+    height: 100vh;
+  }
+  &__logo{
+    position: absolute;
+    left: 60px;
+    top: 178px;
+  }
+  &__slide{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .main-slide{
+      &__title{
+        font-family: GothamPro-Bold;
+        font-size: 3.5rem;
+        line-height: 120.7%;
+        color: #000000;
+      }
+      &__content{
+        font-family: GothamPro-Regular;
+        font-size: 3.4rem;
+        line-height: 120.7%;
+        color: #77391D;
+        p{
+          font-family: GothamPro-Regular;
+          font-size: 3.4rem;
+          line-height: 120.7%;
+          color: #77391D;
+        }
+      }
+      &__lnk{
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        span{
+          font-size: 1.8rem;
+          line-height: 1.7rem;
+          color: #6C1A30;
+          margin-right: 10px;
+          transition: $color-transition;
+        }
+        svg{
+          path{
+            transition: $color-transition;
+          }
+        }
+        &:hover{
+          svg{
+            path{
+              fill: #3A6919;
+            }
+          }
+          span{
+            color: #3A6919;
+          }
+        }
+      }
+    }
+  }
+  &__content{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    padding: 120px 30px 170px 60px;
+    background-color: #FBF8F5;
+  }
+  &__image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100%;
+  }
+  &__navigate{
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+    z-index: 10;
+    > div{
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
 
 
 @import "media";

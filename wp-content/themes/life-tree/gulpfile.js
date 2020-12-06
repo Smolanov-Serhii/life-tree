@@ -20,12 +20,13 @@ const sass = require('gulp-sass');
 
 //Порядок подключения файлов со стилями
 const styleFiles = [
-   './src/scss/main.scss',
-   './src/scss/slick.scss'
+   './src/scss/swiper-bundle.scss',
+   './src/scss/main.scss'
 ]
 //Порядок подключения js файлов
 const scriptFiles = [
-   './src/js/slick.js',
+   './src/js/jquery-3.5.1.js',
+   './src/js/swiper-bundle.js',
    './src/js/main.js'
 ]
 
