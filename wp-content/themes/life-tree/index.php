@@ -19,8 +19,6 @@ get_header();
 <div class="main-slider__container swiper-container">
     <ul class="main-slider__wrapper swiper-wrapper">
         <?php
-        $counter = 0;
-        $class = '';
         $args = array(
             'post_type' => 'main-slider',
             'showposts' => "-1", //сколько показать статей
@@ -29,9 +27,7 @@ get_header();
         $my_query = new wp_query($args);
         if ($my_query->have_posts()) {
             while ($my_query->have_posts()) {
-                $counter++;
                 $thumb_id = get_post_thumbnail_id();
-                $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
                 $my_query->the_post();
                 $alt = $image['alt'] ?>
                 <li class="main-slider__slide swiper-slide">
@@ -68,6 +64,70 @@ get_header();
         </div>
         <div class="main-slider__next">
             <img src="<?php echo get_template_directory_uri() . "/dist/images-template/slider-next.svg"?>" alt="Следующий слайд пансионата">
+        </div>
+    </div>
+</div>
+<div class="main-about" id="main-about">
+    <div class="main-about__content">
+        <div class="main-about__content-img" style="background-image: url(<?php echo the_field('kartinka_dlya_seczkii_o_pansionate')?>)">
+
+        </div>
+        <div class="main-about__content-desc">
+            <div class="main-about__content-title">
+                <?php echo the_field('zagolovok_dlya_bloka_o_pansionate')?>
+            </div>
+            <div class="main-about__content-text">
+                <?php echo the_field('opisanie_bloka_o_pansionate')?>
+            </div>
+            <div class="main-about__content-lnk">
+                <a href="<?php echo the_field('ssylka_v_bloke_o_pansionate')?>" class="">
+                    <span>Подробнее</span>
+                    <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.9928 15L22 19L17.9928 23L17 22.0089L20.0143 19L17 15.9911L17.9928 15Z" fill="white"/>
+                        <circle cx="19.5" cy="19.5" r="19" stroke="white"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main-about__slider swiper-container">
+        <ul class="main-about__swiper-wrapper swiper-wrapper">
+            <?php
+            $args = array(
+                'post_type' => 'main-about',
+                'showposts' => "-1", //сколько показать статей
+                'orderby' => "", //сортировка по дате
+                'caller_get_posts' => 1);
+            $my_query = new wp_query($args);
+            if ($my_query->have_posts()) {
+                while ($my_query->have_posts()) {
+                    $thumb_id = get_post_thumbnail_id();
+                    $my_query->the_post();
+                    $alt = $image['alt'] ?>
+                    <li class="main-about__slide about-slide swiper-slide">
+                        <div class="main-about__header">
+                            <div class="about-slide__icon">
+                                <img src="<?php echo the_field('ikonka_dlya_zapisi')?>">
+                            </div>
+                            <div class="about-slide__title">
+                                <?php echo the_field('zagolovok_dlya_zapisi')?>
+                            </div>
+                        </div>
+                        <div class="about-slide__content">
+                            <?php echo the_field('opisanie_zapisi')?>
+                        </div>
+                    </li>
+                <?php }
+            }
+            wp_reset_query(); ?>
+        </ul>
+        <div class="main-about__navigate">
+            <div class="main-about__prev">
+                <img src="<?php echo get_template_directory_uri() . "/dist/images-template/slider-prew-wh.svg"?>" alt="Предидущий слайд О пансионате">
+            </div>
+            <div class="main-about__next">
+                <img src="<?php echo get_template_directory_uri() . "/dist/images-template/slider-next-wh.svg"?>" alt="Следующий слайд О пансионате">
+            </div>
         </div>
     </div>
 </div>

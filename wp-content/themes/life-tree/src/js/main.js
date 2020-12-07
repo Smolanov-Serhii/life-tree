@@ -12,4 +12,28 @@ $(document).ready(function() {
             slidesPerView: 1,
         })
     }
+    if ($('.main-about__slider').length > 0){
+        var mainslider = new Swiper('.main-about__slider', {
+            navigation: {
+                nextEl: '.main-slider__next',
+                prevEl: '.main-slider__prev',
+            },
+            watchOverflow: true,
+            spaceBetween: 20,
+            slidesPerView: 3.2,
+            breakpoints: {
+                600: {
+                    slidesPerView: 3.3,
+                },
+                500: {
+                    slidesPerView: 2.3,
+                },
+                300: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 25,
+                },
+
+            },
+        })
+    }
 });

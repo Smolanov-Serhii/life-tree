@@ -225,7 +225,102 @@ body{
     }
   }
 }
+.main-about{
+  display: block;
+  background-color: #8FBF4F;
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 100px 70px 70px 70px;
+  }
+  &__content-img{
+    width: 50%;
+    height: 362px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &__content-desc{
+    width: calc(50% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  &__content-title{
+    font-size: 4.5rem;
+    line-height: 4.3rem;
+    font-family: GothamPro-Bold;
+    margin: 30px 0;
+    color: #FFFFFF;
+  }
+  &__content-text{
+    font-family: GothamPro-Regular;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: #FFFFFF;
+    flex: 1;
+  }
+  &__content-lnk{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a{
+      display: flex;
+      align-items: center;
+      span{
+        margin-right: 10px;
+        font-family: GothamPro-Regular;
+        font-size: 1.8rem;
+        line-height: 1.7rem;
+        color: #FFFFFF;
+      }
+    }
+  }
+  &__header{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  &__slider{
+    margin-left: 70px;
+    padding-right: 70px;
+    .about-slide{
+      display: flex;
+      flex-direction: column;
+      &__icon{
+        height: 54px;
+        width: 54px;
+        margin-right: 30px;
+      }
+      &__title{
+        font-size: 1.8rem;
+        line-height: 130%;
+        font-family: GothamPro-Bold;
+        color: #000000;
+      }
+      &__content{
+        margin-top: 40px;
+        p{
+          font-size: 1.5rem;
+          line-height: 150.5%;
+          font-family: GothamPro-Regular;
+          color: #000000;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
 
+  }
+  &__slide{
+    padding: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(146, 146, 146, 0.25);
+    width: calc(25% - 10px);
+    height: auto;
+  }
+}
 
 
 @import "media";
