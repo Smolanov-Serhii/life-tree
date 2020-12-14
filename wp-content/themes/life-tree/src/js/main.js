@@ -3,6 +3,7 @@ $(document).ready(function() {
         var mainslider = new Swiper('.main-slider__container', {
             fadeEffect: { crossFade: true },
             virtualTranslate: true,
+            // loop: true,
             effect: "fade",
             navigation: {
                 nextEl: '.main-slider__next',
@@ -12,11 +13,26 @@ $(document).ready(function() {
             slidesPerView: 1,
         })
     }
+
+    if ($('.main-special').length > 0){
+        var mainslider = new Swiper('.main-special__slider', {
+            // loop: true,
+            navigation: {
+                nextEl: '.main-special__next',
+                prevEl: '.main-special__prev',
+            },
+            watchOverflow: true,
+            spaceBetween: 70,
+            slidesPerView: 1,
+        })
+    }
+
+
     if ($('.main-about__slider').length > 0){
         var mainslider = new Swiper('.main-about__slider', {
             navigation: {
-                nextEl: '.main-slider__next',
-                prevEl: '.main-slider__prev',
+                nextEl: '.main-about__next',
+                prevEl: '.main-about__prev',
             },
             watchOverflow: true,
             spaceBetween: 20,
