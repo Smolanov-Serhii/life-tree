@@ -18,6 +18,11 @@
   src: url("../fonts/GothamPro-Bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'GothamPro-Light';
+  src: url("../fonts/GothamPro-Light.ttf") format("truetype");
+}
+
 html{
   font-size: 62.5%;
   font-family: GothamPro-Regular;
@@ -484,7 +489,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 140px);
+    height: calc(100% - 197px);
     display: block;
     z-index: -1;
   }
@@ -502,6 +507,7 @@ body{
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(20px);
     display: flex;
+    margin-bottom: 57px;
   }
   &__photo{
     position: relative;
@@ -529,6 +535,282 @@ body{
       strong, b{
         font-weight: bold;
       }
+    }
+  }
+  &__btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 57px;
+  }
+  &__lnk{
+    width: 299px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 150.69%;
+    color: white;
+    background: #71A24E;
+    border-radius: 100px;
+    text-transform: uppercase;
+    &:visited{
+      color: white;
+    }
+  }
+}
+.main-form{
+  display: flex;
+  &__image{
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    img{
+      transform: translate(-50%,-50%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: auto;
+      width: 100%;
+      max-width: 100%;
+    }
+    &-cont{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 15px 20px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      background-color: white;
+      a{
+        font-size: 1.4rem;
+        line-height: 130%;
+        color: #000000;
+      }
+    }
+  }
+  &__form{
+    width: 50%;
+    padding: 70px;
+    background-color: #80C048;
+    .wpcf7{
+      padding-top: 50px;
+      form{
+        .ajax-loader{
+          display: none;
+        }
+        p{
+          margin-bottom: 0;
+        }
+        .form-submit{
+          background-color: #FFFFFF;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 150.69%;
+          text-transform: uppercase;
+          color: #7DC242;
+          border-radius: 100px;
+          height: 79px;
+          justify-content: center;
+          margin-top: 65px;
+          margin-bottom: 0;
+        }
+        label{
+          width: 100%;
+          font-size: 1.2rem;
+          line-height: 1.1rem;
+          color: #FFFFFF;
+        }
+        input{
+          &::placeholder{
+            font-size: 1.8rem;
+            line-height: 1.7rem;
+            color: #FFFFFF;
+          }
+          width: 100%;
+          font-size: 1.8rem;
+          line-height: 1.7rem;
+          color: #FFFFFF;
+          height: 55px;
+          display: flex;
+          justify-content: left;
+          align-self: center;
+          padding: 0 22px;
+          margin-bottom: 15px;
+          max-width: 391px;
+          border: none;
+          background-color: rgba(255,255,255,0.15);
+        }
+        br{
+          display: none;
+        }
+      }
+    }
+  }
+  &__title{
+    font-size: 4.5rem;
+    line-height: 6.3rem;
+    color: white;
+    font-family: GothamPro-Bold;
+  }
+  &__sub-title{
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #FFFFFF;
+    font-family: GothamPro-Light;
+    width: 56%;
+  }
+}
+.main-advantages{
+  background-color: #FBF8F5;
+  padding: 70px 0 70px 70px;
+  &__header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__title{
+    font-size: 4.5rem;
+    line-height: 6.3rem;
+    font-family: GothamPro-Bold;
+    color: #000;
+    margin-right: 4rem;
+  }
+  &__navigate{
+    display: flex;
+    align-items: center;
+    > div{
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+  &__slider{
+    padding-right: 20px;
+  }
+  &__slide{
+    background-color: #F0D740;
+    padding: 87px 78px 60px 38px;
+    height: auto;
+    min-height: 396px;
+  }
+  &__content{
+    display: flex;
+    flex-direction: column;
+  }
+  &__item{
+    position: relative;
+    &-title{
+      font-size: 2.5rem;
+      line-height: 3.3rem;
+      min-height: 80px;
+      color: #000000;
+      font-family: GothamPro-Regular;
+      font-weight: bolder;
+      margin-bottom: 1.5rem;
+    }
+    &-desc{
+      p, ul, li{
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        color: #000000;
+      }
+      p{
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      color: #000000;
+    }
+    &-lnk{
+      position: absolute;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      bottom: 23px;
+      right: 10px;
+      span{
+        margin-right: 10px;
+        color: #000000;
+        font-family: GothamPro-Medium;
+      }
+    }
+  }
+}
+.main-reviewes{
+  background-color: #B1CD4E;
+  padding: 70px 70px 70px 70px;
+  &__title{
+    font-size: 4.5rem;
+    line-height: 130%;
+    color: #FFFFFF;
+    font-family: GothamPro-Bold;
+    margin-bottom: 7rem;
+  }
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 -10px;
+  }
+  &__item{
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 10px);
+    height: 299vw * $px;
+    background-color: #FFFFFF;
+    padding: 40px 25px 35px 25px;
+    margin: 0 10px 20px 10px;
+    &-video{
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      &:hover{
+        svg{
+          transform: scale(1.2);
+        }
+        img{
+          transform: translate(-50%,-50%) scale(1.2);
+        }
+      }
+      img{
+        transform: translate(-50%,-50%) scale(1.1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        transition: 0.3s;
+      }
+      svg{
+        transition: 0.3s;
+        width: 77vw * $px;
+        height: 77vw * $px;
+        z-index: 2;
+      }
+    }
+    .name{
+      font-size: 25vw * $px;
+      line-height: 24vw * $px;
+      color: #000000;
+      margin-bottom: 30px;
+    }
+    .description{
+      p, li, span{
+        font-size: 16vw * $px;
+        line-height: 18vw * $px;
+        color: #000000;
+      }
+      font-size: 16vw * $px;
+      line-height: 18vw * $px;
+      color: #000000;
     }
   }
 }

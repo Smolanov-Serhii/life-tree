@@ -216,50 +216,137 @@ get_header();
         </div>
         <div class="main-team__content">
             <div class="main-team__photo">
-                <img class="main-team__img" src="<?php echo the_field('fotografiya_personala', 2); ?>" alt="<?php echo the_field('opisanie_fotografii_personala', 2); ?>">
+                <img class="main-team__img" src="<?php echo the_field('fotografiya_personala', 2); ?>"
+                     alt="<?php echo the_field('opisanie_fotografii_personala', 2); ?>">
             </div>
             <div class="main-team__desc">
                 <?php echo the_field('opisanie_personala', 2); ?>
             </div>
         </div>
+        <div class="main-team__btn">
+            <a href="" class="main-team__lnk">
+                Вся команда
+            </a>
+        </div>
     </div>
-    <main id="primary" class="site-main">
+    <div class="main-form">
+        <div class="main-form__image">
+            <img class="main-form__img" src="<?php echo the_field('kartinka_dlya_formy_zapisi', 2); ?>"
+                 alt="<?php echo the_field('zagolovok_dlya_formi', 2); ?>">
+            <div class="main-form__image-cont">
+                <a href="tel:<?php echo get_theme_mod('phone'); ?>"><?php echo get_theme_mod('phone'); ?></a>
+                <a href="<?php echo get_theme_mod('phone_2'); ?>"><?php echo get_theme_mod('phone_2'); ?></a>
+                <a href="mailto:<?php echo get_theme_mod('e-mail'); ?>"><?php echo get_theme_mod('e-mail'); ?></a>
+            </div>
+        </div>
+        <div class="main-form__form">
 
-        <?php
-        if (have_posts()) :
-
-            if (is_home() && !is_front_page()) :
-                ?>
-                <header>
-                    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                </header>
+            <div class="main-form__sub-title">
+                <?php echo the_field('podzagolovok_dlya_formy', 2); ?>
+            </div>
+            <?php echo do_shortcode( '[contact-form-7 id="5" title="Контактная форма 1"]' ); ?>
+        </div>
+    </div>
+    <div class="main-advantages">
+        <div class="main-advantages__header">
+            <div class="main-advantages__title">
+                <?php echo the_field('zagolovok_bloka_preimushhestva', 2); ?>
+            </div>
+            <div class="main-advantages__navigate">
+                <div class="main-advantages__prev">
+                    <img src="<?php echo get_template_directory_uri() . "/dist/images-template/slider-prew-gr.svg" ?>"
+                         alt="Предидущий слайд О Спецпредложении">
+                </div>
+                <div class="main-advantages__next">
+                    <img src="<?php echo get_template_directory_uri() . "/dist/images-template/slider-next-gr.svg" ?>"
+                         alt="Следующий слайд О Спецпредложениие">
+                </div>
+            </div>
+        </div>
+        <div class="main-advantages__slider swiper-container">
+            <ul class="main-advantages__wrapper swiper-wrapper">
+                <?php
+                $args = array(
+                    'post_type' => 'advantages',
+                    'showposts' => "-1", //сколько показать статей
+                    'orderby' => "", //сортировка по дате
+                    'caller_get_posts' => 1);
+                $my_query = new wp_query($args);
+                if ($my_query->have_posts()) {
+                    while ($my_query->have_posts()) {
+                        $thumb_id = get_post_thumbnail_id();
+                        $my_query->the_post(); ?>
+                        <li class="main-advantages__slide swiper-slide">
+                            <div class="main-advantages__content">
+                                <div class="main-advantages__item-title">
+                                    <?php the_title(); ?>
+                                </div>
+                                <div class="main-advantages__item-desc">
+                                    <?php the_excerpt(); ?>
+                                </div>
+                                <a href="<?php echo the_permalink(); ?>" class="main-advantages__item-lnk">
+                                    <span>Подробнее</span>
+                                    <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.9928 15L22 19L17.9928 23L17 22.0089L20.0143 19L17 15.9911L17.9928 15Z" fill="black"/>
+                                        <circle opacity="0.3" cx="19.5" cy="19.5" r="19" stroke="black"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    <?php }
+                }
+                wp_reset_query(); ?>
+            </ul>
+        </div>
+    </div>
+    <div class="main-reviewes">
+        <div class="main-reviewes__title">
+            <?php echo the_field('zagolovok_bloka_otzyvy', 2); ?>
+        </div>
+        <div class="main-reviewes__container">
             <?php
-            endif;
-
-            /* Start the Loop */
-            while (have_posts()) :
-                the_post();
-
-                /*
-                 * Include the Post-Type-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-                 */
-                get_template_part('template-parts/content', get_post_type());
-
-            endwhile;
-
-            the_posts_navigation();
-
-        else :
-
-            get_template_part('template-parts/content', 'none');
-
-        endif;
-        ?>
-
-    </main><!-- #main -->
-
+            $args = array(
+                'post_type' => 'reviewes',
+                'showposts' => "-1", //сколько показать статей
+                'orderby' => "", //сортировка по дате
+                'caller_get_posts' => 1);
+            $my_query = new wp_query($args);
+            if ($my_query->have_posts()) {
+                while ($my_query->have_posts()) {
+                    $thumb_id = get_post_thumbnail_id();
+                    $my_query->the_post();
+                    $post_id = get_the_ID();
+                    $link = get_post_meta($post_id, $key = 'ssylka_na_video_esli_est_video', true);
+                    if ( !empty ($link)) {
+                        ?>
+                        <a href="<?php echo the_field('ssylka_na_video_esli_est_video'); ?>" class="fresco main-reviewes__item main-reviewes__item-video">
+                            <img src="<?php echo the_field('oblozhka_dlya_video_esli_est_video'); ?>" alt="<?php echo the_field('imya'); ?> оставил(а) отзыв">
+                            <svg width="76" height="77" viewBox="0 0 76 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M75.474 38.5C75.474 59.4946 58.7355 76.5 38.1048 76.5C17.474 76.5 0.735474 59.4946 0.735474 38.5C0.735474 17.5054 17.474 0.5 38.1048 0.5C58.7355 0.5 75.474 17.5054 75.474 38.5Z" stroke="white"/>
+                                <path d="M50.4 39L32.6949 49.3923L32.6949 28.6077L50.4 39Z" fill="white"/>
+                            </svg>
+                        </a>
+                        <?php
+                    } else {
+                        ?>
+                        <div class="main-reviewes__item main-reviewes__item-text">
+                            <div class="name">
+                                <?php echo the_field('imya'); ?>
+                            </div>
+                            <div class="description">
+                                <?php echo the_field('otzyv_dlya_glavnoj_straniczy'); ?>
+                            </div>
+                        </div>
+                        <?php
+                    }?>
+                <?php }
+            }
+            wp_reset_query(); ?>
+        </div>
+        <div class="main-reviewes__lnk">
+            <a href="">Все отзывы</a>
+        </div>
+    </div>
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

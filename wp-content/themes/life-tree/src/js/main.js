@@ -52,4 +52,29 @@ $(document).ready(function() {
             },
         })
     }
+
+    if ($('.main-advantages').length > 0){
+        var mainslider = new Swiper('.main-advantages__slider', {
+            navigation: {
+                nextEl: '.main-advantages__next',
+                prevEl: '.main-advantages__prev',
+            },
+            watchOverflow: true,
+            spaceBetween: 20,
+            slidesPerView: 2.3,
+            breakpoints: {
+                600: {
+                    slidesPerView: 2.3,
+                },
+                500: {
+                    slidesPerView: 1.3,
+                },
+                300: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 25,
+                },
+
+            },
+        })
+    }
 });
