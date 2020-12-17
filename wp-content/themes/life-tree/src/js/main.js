@@ -77,4 +77,39 @@ $(document).ready(function() {
             },
         })
     }
+
+    function initMap1(){
+        if ($('#map-1').length) {
+            var mapcoord1 = $('#map-1').data('latitude1');
+            var mapcoord2 = $('#map-1').data('latitude2');
+            var map = L.map('map-1').setView([mapcoord1, mapcoord2], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([mapcoord1, mapcoord2]).addTo(map)
+            // .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            // .openPopup();
+        }
+
+    }
+
+    function initMap2(){
+        if ($('#map-2').length) {
+            var mapcoord1 = $('#map-2').data('latitude1');
+            var mapcoord2 = $('#map-2').data('latitude2');
+            var map = L.map('map-2').setView([mapcoord1, mapcoord2], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([mapcoord1, mapcoord2]).addTo(map)
+            // .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            // .openPopup();
+        }
+
+    }
+    initMap1();
+    initMap2();
 });

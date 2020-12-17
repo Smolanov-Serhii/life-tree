@@ -251,6 +251,12 @@ if ( ! function_exists( 'life_tree_setup' ) ) :
 			)
 		);
 
+        register_nav_menus(
+            array(
+                'Footer-menu' => esc_html__( 'Нижнее меню', 'life-tree' ),
+            )
+        );
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.

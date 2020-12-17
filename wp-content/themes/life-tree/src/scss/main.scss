@@ -1,6 +1,7 @@
 @import "normalize";
 @import "vars";
 @import "fresco";
+@import "leaflet";
 @import "default";
 
 @font-face {
@@ -744,7 +745,7 @@ body{
 }
 .main-reviewes{
   background-color: #B1CD4E;
-  padding: 70px 70px 70px 70px;
+  padding: 70px 70px 50px 70px;
   &__title{
     font-size: 4.5rem;
     line-height: 130%;
@@ -811,6 +812,116 @@ body{
       font-size: 16vw * $px;
       line-height: 18vw * $px;
       color: #000000;
+    }
+  }
+  &__lnk{
+    a{
+      width: 300px;
+      height: 70px;
+      background-color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150.69%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #3A6919;
+      margin: 30px auto 0 auto;
+
+    }
+  }
+}
+.main-map{
+  padding: 70px;
+  &__container{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item{
+    width: calc(50% - 10px);
+  }
+  &__map{
+    height: 324px;
+    width: 100%;
+    margin-top: 2rem;
+    filter: drop-shadow(4px 4px 20px rgba(0, 0, 0, 0.25));
+    .leaflet-bottom{
+      display: none;
+    }
+    .leaflet-marker-icon{
+      width: 35px!important;
+    }
+    .leaflet-marker-shadow{
+      width: 52px!important;
+    }
+  }
+  &__loc{
+    font-size: 2.5rem;
+    line-height: 130%;
+    color: #000000;
+    font-family: GothamPro-Medium;
+  }
+  &__adress{
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    line-height: 130%;
+    color: #000000;
+    p{
+      margin-bottom: 0;
+      font-size: 1.7rem;
+      line-height: 130%;
+      color: #000000;
+    }
+  }
+}
+.footer{
+  margin-top: -280px;
+  background-color: #7DC242;
+  padding: 310px 70px 30px 70px;
+  &__menu{
+    .menu{
+      display: flex;
+      justify-content: space-between;
+      li{
+        display: flex;
+        flex-direction: column;
+        a{
+          font-size: 1.8rem;
+          line-height: 3.5rem;
+          color: #FFFFFF;
+          font-family: GothamPro-Regular;
+        }
+        > a{
+          font-size: 2.5rem;
+          line-height: 2.4rem;
+          color: #FFFFFF;
+          font-family: GothamPro-Medium;
+        }
+      }
+    }
+  }
+  &__contacts{
+    margin-top: 80px;
+    display: inline-block;
+    a{
+      font-size: 2.2rem;
+      line-height: 130%;
+      color: #FFFFFF;
+      font-family: GothamPro-Regular;
+      font-weight: normal;
+      display: block;
+    }
+  }
+  &__socials{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    a{
+      margin-right: 30px;
     }
   }
 }
