@@ -14,6 +14,27 @@ $(document).ready(function() {
         })
     }
 
+    if ($('#popup').length > 0){
+        setTimeout(function(){
+            $('.popup').toggleClass('hide');
+            $('body').addClass('locked');
+        }, 2000);
+        $( ".popup__close" ).click(function() {
+            $('.popup').addClass('hide');
+            $('body').removeClass('locked');
+        });
+        jQuery(function($){
+            $(document).mouseup(function (e){ // событие клика по веб-документу
+                var div = $(".popup__wrapper"); // тут указываем ID элемента
+                if (!div.is(e.target) // если клик был не по нашему блоку
+                    && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                    $('.popup').addClass('hide');
+                    $('body').removeClass('locked');
+                }
+            });
+        });
+    }
+
     if ($('.main-special').length > 0){
         var mainslider = new Swiper('.main-special__slider', {
             // loop: true,
@@ -110,6 +131,22 @@ $(document).ready(function() {
         }
 
     }
+    function initMap3(){
+        if ($('#map-3').length) {
+            var mapcoord1 = $('#map-3').data('latitude1');
+            var mapcoord2 = $('#map-3').data('latitude2');
+            var map = L.map('map-3').setView([mapcoord1, mapcoord2], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([mapcoord1, mapcoord2]).addTo(map)
+            // .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            // .openPopup();
+        }
+
+    }
     initMap1();
     initMap2();
+    initMap3();
 });

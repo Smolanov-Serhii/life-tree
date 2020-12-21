@@ -160,7 +160,7 @@ function register_post_types(){
         'supports'            => [ 'title', 'editor','thumbnail', 'excerpt', 'page-attributes','post-formats'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies'          => [],
         'has_archive'         => true,
-        'rewrite'             => true,
+        'rewrite' => array('slug' => '/', 'with_front' => false),
         'query_var'           => true,
     ] );
 
@@ -458,6 +458,17 @@ function life_tree_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+    register_sidebar(
+        array(
+            'name'          => esc_html__( 'Попап', 'life-tree' ),
+            'id'            => 'popup',
+            'description'   => esc_html__( 'Попап при загрузке', 'life-tree' ),
+            'before_widget' => '<section id="%1$s" class="popup__desc %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="popup-title">',
+            'after_title'   => '</h2>',
+        )
+    );
 }
 add_action( 'widgets_init', 'life_tree_widgets_init' );
 
