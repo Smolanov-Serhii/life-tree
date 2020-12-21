@@ -38,6 +38,8 @@ a{
   box-sizing: border-box;
   font-size: 1.6rem;
   line-height: 120%;
+  outline: none!important;
+  -webkit-tap-highlight-color: transparent;
 }
 .locked{
   overflow: hidden;
@@ -310,6 +312,7 @@ body{
     .about-slide{
       display: flex;
       flex-direction: column;
+      filter: drop-shadow(4px 4px 20px rgba(0, 0, 0, 0.25));
       &__icon{
         height: 54px;
         width: 54px;
@@ -888,9 +891,12 @@ body{
   }
 }
 .footer{
-  margin-top: -280px;
   background-color: #7DC242;
-  padding: 310px 70px 30px 70px;
+  padding: 70px 70px 30px 70px;
+  &.home{
+    margin-top: -280px;
+    padding: 310px 70px 30px 70px;
+  }
   &__menu{
     .menu{
       display: flex;
@@ -989,6 +995,56 @@ body{
     top: 20px;
     right: 20px;
     cursor: pointer;
+  }
+}
+.simple-page{
+  padding-bottom: 70px;
+  article{
+    width: 100%;
+    height: auto;
+  }
+  &__wrapper{
+    background-color: rgba(255,255,255,0.8);
+    position: relative;
+    padding-top: 30px;
+    width: calc(100% - 120px);
+  }
+  .post-thumbnail{
+    margin-bottom: -300px;
+  }
+  .current-thumbnail{
+    width: 100%;
+    height: auto;
+  }
+  &__title{
+    margin: 4rem 0;
+    text-align: center;
+    &:first-child{
+      margin: 4rem 0;
+    }
+  }
+  &__content{
+    p, li, a, em{
+      font-family: 'GothamPro Regular', sans-serif;
+      font-size: 2rem;
+      color: rgb(98, 104, 118);
+    }
+    a{
+      color: #8FBF4F;
+    }
+    strong{
+      font-weight: bolder;
+    }
+    em{
+     font-style: italic;
+    }
+    ul{
+      list-style: circle;
+      max-width: 80%;
+      li{
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
 @import "media";

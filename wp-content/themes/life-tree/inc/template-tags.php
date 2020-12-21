@@ -128,7 +128,7 @@ if ( ! function_exists( 'life_tree_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail('full', array('class' => 'current-thumbnail')); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>

@@ -160,7 +160,7 @@ function register_post_types(){
         'supports'            => [ 'title', 'editor','thumbnail', 'excerpt', 'page-attributes','post-formats'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies'          => [],
         'has_archive'         => true,
-        'rewrite' => array('slug' => '/', 'with_front' => false),
+        'rewrite'             => true,
         'query_var'           => true,
     ] );
 

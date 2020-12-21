@@ -11,7 +11,11 @@
 
 ?>
 
-	<footer id="footer" class="footer">
+	 <?php if ( is_front_page()): ?>
+        <footer id="footer" class="footer home">
+    <?php else : ?>
+        <footer id="footer" class="footer">
+    <?php endif; ?>
         <div class="footer__menu">
             <?php
             wp_nav_menu(
