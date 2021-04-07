@@ -30,9 +30,9 @@
 				)
 			);
 			?>
-            <div class="main__burger-menu transition05">
-                <span></span>
-                <span></span>
-            </div>
+<!--            <div class="main__burger-menu transition05">-->
+<!--                <span></span>-->
+<!--                <span></span>-->
+<!--            </div>-->
 		</nav>
 	</header>
