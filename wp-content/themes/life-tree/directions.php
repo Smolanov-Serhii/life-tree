@@ -8,6 +8,9 @@ get_header();
 ?>
     <main class="directions-page" id="directions-page">
         <article>
+            <div class="directions-page__image">
+                <?php the_post_thumbnail();?>
+            </div>
             <section class="directions-header block-container">
                 <h1 class="directions-header__title">
                     <?php the_title();?>

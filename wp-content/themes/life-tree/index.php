@@ -205,11 +205,11 @@ get_header();
                 <?php echo the_field('opisanie_personala', 2); ?>
             </div>
         </div>
-        <div class="main-team__btn">
-            <a href="" class="main-team__lnk">
-                Вся команда
-            </a>
-        </div>
+<!--        <div class="main-team__btn">-->
+<!--            <a href="" class="main-team__lnk">-->
+<!--                Вся команда-->
+<!--            </a>-->
+<!--        </div>-->
     </section>
     <div class="main-form">
         <div class="main-form__image">

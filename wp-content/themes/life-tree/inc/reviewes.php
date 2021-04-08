@@ -4,9 +4,15 @@
     </h2>
     <div class="main-reviewes__container">
         <?php
+        if( wp_is_mobile() ) {
+            $count = 8;
+        } else {
+            $count = 8;
+        };
+
         $args = array(
             'post_type' => 'reviewes',
-            'showposts' => "-1", //сколько показать статей
+            'showposts' => $count, //сколько показать статей
             'orderby' => "", //сортировка по дате
             'caller_get_posts' => 1);
         $my_query = new wp_query($args);

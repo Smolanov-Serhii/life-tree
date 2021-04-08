@@ -1,4 +1,12 @@
 $(document).ready(function() {
+
+    if ($('.main__burger-menu').length > 0){
+        $('.main__burger-menu').click(function() {
+            $('.menu-osnovnoe-menyu-container').fadeToggle(300);
+            $('body').toggleClass('locked');
+        });
+    }
+
     if ($('.main-slider__container').length > 0){
         var mainslider = new Swiper('.main-slider__container', {
             fadeEffect: { crossFade: true },
@@ -45,6 +53,23 @@ $(document).ready(function() {
             watchOverflow: true,
             spaceBetween: 70,
             slidesPerView: 1,
+            breakpoints: {
+                768: {
+                    slidesPerView: 1,
+                },
+                500: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 20,
+                },
+                400: {
+                    slidesPerView: 1.1,
+                    spaceBetween: 20,
+                },
+                240: {
+                    slidesPerView: 1.1,
+                    spaceBetween: 20,
+                },
+            },
         })
     }
 
@@ -59,14 +84,29 @@ $(document).ready(function() {
             spaceBetween: 20,
             slidesPerView: 3.2,
             breakpoints: {
+                1400: {
+                    slidesPerView: 3.2,
+                },
+                1100: {
+                    slidesPerView: 2.8,
+                },
+                950: {
+                    slidesPerView: 2.2,
+                    spaceBetween: 25,
+                },
                 600: {
-                    slidesPerView: 3.3,
+                    slidesPerView: 1.8,
                 },
                 500: {
-                    slidesPerView: 2.3,
+                    slidesPerView: 1.4,
+                    spaceBetween: 25,
                 },
-                300: {
-                    slidesPerView: 1.2,
+                400: {
+                    slidesPerView: 1.1,
+                    spaceBetween: 25,
+                },
+                240: {
+                    slidesPerView: 1.1,
                     spaceBetween: 25,
                 },
 
@@ -84,15 +124,19 @@ $(document).ready(function() {
             spaceBetween: 20,
             slidesPerView: 2.3,
             breakpoints: {
-                600: {
+                700: {
                     slidesPerView: 2.3,
                 },
                 500: {
-                    slidesPerView: 1.3,
+                    slidesPerView: 1.8,
+                },
+                400: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 20,
                 },
                 300: {
                     slidesPerView: 1.2,
-                    spaceBetween: 25,
+                    spaceBetween: 20,
                 },
 
             },
