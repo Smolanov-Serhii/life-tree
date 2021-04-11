@@ -76,9 +76,9 @@ get_header();
                 </picture>
             </div>
             <div class="main-about__content-desc">
-                <h1 class="main-about__content-title">
-                    <?php echo the_field('zagolovok_dlya_bloka_o_pansionate') ?>
-                </h1>
+<!--                <h1 class="main-about__content-title">-->
+<!--                    --><?php //echo the_field('zagolovok_dlya_bloka_o_pansionate') ?>
+<!--                </h1>-->
                 <div class="main-about__content-text">
                     <?php the_content(); ?>
                 </div>
