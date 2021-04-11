@@ -11,7 +11,7 @@
 
 <article id="simple-page__<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php life_tree_post_thumbnail('thumbnail', array('class' => 'thumbnail')); ?>
-    <div class="simple-page__wrapper container">
+    <div class="simple-page__wrapper block-container">
             <?php the_title( '<h1 class="simple-page__title">', '</h1>' ); ?>
 
         <div class="simple-page__content">

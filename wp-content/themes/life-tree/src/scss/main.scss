@@ -1700,13 +1700,20 @@ body {
     cursor: pointer;
   }
 }
-
 .simple-page {
   padding-bottom: 70px;
+  @media all and (max-width: 768px) {
+    padding-bottom: 0;
+  }
 
   article {
     width: 100%;
     height: auto;
+  }
+  &__title{
+    @media all and (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__wrapper {
@@ -1714,10 +1721,22 @@ body {
     position: relative;
     padding-top: 30px;
     width: calc(100% - 120px);
+    @media all and (max-width: 1024px) {
+      width: 100%;
+    }
+    @media all and (max-width: 768px) {
+      padding-top: 0;
+    }
   }
 
   .post-thumbnail {
     margin-bottom: -300px;
+    @media all and (max-width: 1400px) {
+      margin-bottom: -177px;
+    }
+    @media all and (max-width: 1024px) {
+      margin-bottom: 0;
+    }
   }
 
   .current-thumbnail {
@@ -1755,16 +1774,24 @@ body {
     ul {
       list-style: circle;
       max-width: 80%;
+      @media all and (max-width: 768px) {
+        max-width: none;
+      }
 
       li {
         margin-bottom: 1rem;
+        @media all and (max-width: 768px) {
+          transform: translateX(1.5em);
+        }
       }
     }
   }
 }
-
 .slide-page, .default-page {
-  padding-top: 171px;
+  padding-top: 130px;
+  @media all and (max-width: 768px) {
+    padding-top: 40px;
+  }
 
   .post-thumbnail {
     width: 100%;
@@ -1790,10 +1817,28 @@ body {
     }
   }
 }
-
+.default-page{
+  @media all and (max-width: 768px) {
+    padding-top: 85px;
+  }
+}
 .directions-header {
   padding-top: 80px;
   margin-bottom: 80px;
+  @media all and (max-width: 920px) {
+    padding-top: 40px;
+  }
+  @media all and (max-width: 768px) {
+    padding-top: 20px;
+  }
+  @media all and (max-width: 500px) {
+    margin-bottom: 0;
+  }
+  &__title{
+    @media all and (max-width: 920px) {
+      margin-bottom: 0;
+    }
+  }
 
   &:first-child {
     padding-top: 171px;
@@ -1801,9 +1846,16 @@ body {
 
   ul {
     list-style: disc !important;
+    @media all and (max-width: 768px) {
+      padding-right: 20px;
+    }
+
 
     li {
       margin-bottom: 10px;
+      @media all and (max-width: 768px) {
+        transform: translateX(1.5em);
+      }
     }
   }
 
@@ -1817,11 +1869,27 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
-
+  &__title{
+    @media all and (max-width: 1024px) {
+      font-size: 2.5rem;
+    }
+    @media all and (max-width: 768px) {
+      font-size: 3rem;
+    }
+  }
   &-page {
     &__image {
       height: 500px;
       overflow: hidden;
+      @media all and (max-width: 768px) {
+        height: 320px;
+      }
+      @media all and (max-width: 600px) {
+        height: 200px;
+      }
+      @media all and (max-width: 600px) {
+        height: 160px;
+      }
 
       img {
         object-fit: cover;
@@ -1837,6 +1905,20 @@ body {
     height: 250px;
     position: relative;
     overflow: hidden;
+    @media all and (max-width: 1360px) {
+      width: 50%;
+    }
+    @media all and (max-width: 1024px) {
+      padding: 20px 40px;
+      height: 220px;
+    }
+    @media all and (max-width: 940px) {
+      margin-bottom: 0;
+    }
+    @media all and (max-width: 600px) {
+      width: 100%;
+      padding: 20px;
+    }
 
     &:hover {
       .directions__lnk {
@@ -1858,6 +1940,12 @@ body {
     color: #404040 !important;
     font-size: 18px;
     text-decoration: none;
+    @media all and (max-width: 1024px) {
+      opacity: 1;
+      transform: translateX(0);
+      color: white;
+      text-decoration: underline;
+    }
 
     &:visited {
       color: #404040;
@@ -1867,12 +1955,18 @@ body {
 
 .contacts {
   padding-top: 140px;
-
+  @media all and (max-width: 920px) {
+    padding-top: 100px;
+  }
+  @media all and (max-width: 768px) {
+    padding-top: 42px;
+  }
   &__items {
     display: flex;
     justify-content: space-between;
     margin-right: -20px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
   }
 
   &__item {
@@ -1883,6 +1977,13 @@ body {
     padding: 40px;
     display: flex;
     flex-direction: column;
+    @media all and (max-width: 1300px) {
+      padding: 20px;
+    }
+    @media all and (max-width: 1100px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
