@@ -1349,7 +1349,7 @@ body {
     display: flex;
     flex-direction: column;
     width: calc(25% - 20px);
-    height: 299vw * $px;
+    height: auto;
     background-color: #FFFFFF;
     padding: 40px 25px 35px 25px;
     margin: 0 10px 20px 10px;
